@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Interaktif</title>
+    <style>
+        :root {
+            --primary-color: yellow;
+            --secondary-font-size: 16px;
+
+            --border-style: 1px solid black;
+        }
+
+        input {
+            width: 40px;
+        }
+
+        input:focus {
+            background-color: red;
+        }
+
+        li:first-child {
+            font-size: 50px;
+            background-color: red;
+        }
+
+        li:last-child {
+            font-size: 50px;
+            background-color: blue;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 80px;
+            background-color: var(--primary-color);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: var(--secondary-font-size);
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 2s ease;
+            animation: berdenyut 2s ease-in-out infinite;
+        }
+
+        .btn:active {
+            background-color: red;
+            font-size: 18px;
+            transform: scale(1.2);
+        }
+
+        .card {
+            max-width: 300px;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            animation: muncul 1s ease 5;
+        }
+
+        .card:hover {
+            transform: translateX(-10px);
+        }
+
+        .spinner {
+            margin-top: 50px;
+            width: 100px;
+            height: 100px;
+            border: 10px solid #ddd;
+            border-top: 10px solid #4A90E2;
+            border-radius: 50%;
+            animation: putar 2s linear infinite;
+        }
+
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes putar {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes berdenyut {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">
+
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+    </ol>
+
+    <!-- <button class="btn">Klik Saya</button> -->
+
+    <div class="card">
+        <h3>Judul Produk</h3>
+        <p>Deskripsi singkat produk di sini.</p>
+    </div>
+
+    <div class="spinner"></div>
+
+</body>
+
+</html>
